@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Directory extends Component {
     constructor(props) {
         super(props);
-        this.state = {            campsites: [
+        this.state = {            
+            campsites: [
             {
                 id: 0,
                 name: 'React Lake Campground',
@@ -12,11 +13,11 @@ class Directory extends Component {
                 description: "Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers."
             },
             {
-              id: 1,
-              name: 'Chrome River Campground ',
-              image: 'assets/images/chrome-river.jpg',
-              elevation: 877,
-              description: "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River."
+                id: 1,
+                name: 'Chrome River Campground ',
+                image: 'assets/images/chrome-river.jpg',
+                elevation: 877,
+                description: "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River."
             },
             {
                 id: 2,
@@ -38,7 +39,7 @@ class Directory extends Component {
     render() {
         const directory = this.state.campsites.map(campsite => {
             return (
-                <div className="col">
+                <div key={campsite.id} className="col">
                     <img src={campsite.image} alt={campsite.name} />
                     <h2>{campsite.name}</h2>
                     <p>{campsite.description}</p>
