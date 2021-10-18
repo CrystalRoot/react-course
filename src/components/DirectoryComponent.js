@@ -52,9 +52,28 @@ class Directory extends Component {
                 <div className="row">
                     {directory}
                 </div>
+                <ExampleParentComponent />
             </div>
         );
     }
 }
+
+class ExampleParentComponent extends Component { 
+    constructor(props) { 
+        super(props); 
+        this.state = { 
+            number: 333 
+        } 
+    } 
+    render() { 
+        return <ExampleChildComponent foo={this.state.number} greeting="Hello World"/>; 
+    } 
+} 
+    
+class ExampleChildComponent extends Component { 
+    render() { 
+        return <div>{this.props.foo} {this.props.greeting}</div> 
+    };
+} 
 
 export default Directory;
