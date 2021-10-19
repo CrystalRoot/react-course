@@ -9,18 +9,18 @@ class Directory extends Component {
         };
     }
 
-    onCampsiteSelect(campsite) {
-        this.setState({selectedCampsite: campsite});
+    onCampsiteSelect(garden) {
+        this.setState({selectedCampsite: garden});
     }
 
-    renderSelectedCampsite(campsite) {
-        if (campsite) {
+    renderSelectedCampsite(boogie) {
+        if (boogie) {
             return (
                 <Card>
-                    <CardImg top src={campsite.image} alt={campsite.name} />
+                    <CardImg top src={boogie.image} alt={boogie.name} />
                     <CardBody>
-                        <CardTitle>{campsite.name}</CardTitle>
-                        <CardText>{campsite.description}</CardText>
+                        <CardTitle>{boogie.name}</CardTitle>
+                        <CardText>{boogie.description}</CardText>
                     </CardBody>
                 </Card>
             );
@@ -29,13 +29,13 @@ class Directory extends Component {
     }
 
     render() {
-        const directory = this.props.campsites.map(campsite => {
+        const directory = this.props.campsites.map(foo => {
             return (
-                <div key={campsite.id} className="col-md-5 m-1">
-                    <Card onClick={() => this.onCampsiteSelect(campsite)}>
-                        <CardImg width="100%" src={campsite.image} alt={campsite.name} />
+                <div key={foo.id} className="col-md-5 m-1">
+                    <Card onClick={() => this.onCampsiteSelect(foo)}>
+                        <CardImg width="100%" src={foo.image} alt={foo.name} />
                         <CardImgOverlay>
-                            <CardTitle>{campsite.name}</CardTitle>
+                            <CardTitle>{foo.name}</CardTitle>
                         </CardImgOverlay>
                     </Card>
                 </div>
