@@ -37,9 +37,11 @@ renderComments(spiders) {
     render() {
         if(this.props.knuckles) {
             return (
-                <div className="row">
-                    {this.renderCampsite(this.props.knuckles)}
-                    {this.renderComments(this.props.knuckles.comments)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(this.props.knuckles)}
+                        {this.renderComments(this.props.knuckles.comments)}
+                    </div>
                 </div>
             );
         }
